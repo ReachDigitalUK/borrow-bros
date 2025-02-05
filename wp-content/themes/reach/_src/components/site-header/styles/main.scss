@@ -19,7 +19,7 @@ $site-header--top--background: 'white';
 }
 
 .site-header {
-    --site-header--height: #{rem(70)};
+    --site-header--height: 7em;
     --site-header--logo-width: #{rem(120)};
 
     --site-header--spacing: var(--space--m);
@@ -79,7 +79,7 @@ $site-header--top--background: 'white';
 
     &__top {
         display: flex;
-        height: var(--site-header--height);
+        height: 7em;
         align-items: center;
         padding-right: var(--space--container-padding);
         padding-left: var(--space--container-padding);
@@ -144,6 +144,22 @@ $site-header--top--background: 'white';
             align-items: center;
             justify-content: flex-end;
             grid-auto-flow: column;
+
+        }
+    }
+
+    &__icon-row{
+            display: flex;
+            gap: 20px;
+        img{
+            width: 30px;
+            height: 30px;
+        }
+    }
+
+    &__navigation{
+        @include mq('site-header') {
+            display: none;
         }
     }
 
