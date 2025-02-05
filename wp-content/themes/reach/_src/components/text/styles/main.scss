@@ -19,14 +19,17 @@
     }
 
     &__heading {
-        @include typestyle-h3;
-        margin-bottom: 2rem;
+            margin-bottom: 0px;
+            font-size: 60px;
+            max-width: 330px;
+            line-height: 55px;
     }
 
     &__columns {
         display: grid;
         grid-template-columns: repeat(var(--text-column-size), 1fr);
         gap: 2rem;
+        width: 50%;
 
         @include mq($until: large) {
             grid-template-columns: repeat(var(--text-column-size) / 2, 1fr);
