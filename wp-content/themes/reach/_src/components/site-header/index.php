@@ -14,14 +14,7 @@
                 'content_filter' => false,
             ]); ?>
 
-            <button
-                class="site-header__search-toggler site-header__search-toggler--mobile reach-button"
-                aria-expanded="false"
-                aria-controls="site-header-search-form">
-                <span class="visually-hidden">
-                    <?= esc_html__('Expand the search field', 'reach'); ?>
-                </span>
-            </button>
+
 
             <?= \Reach\Component::get('burger', [
                 'classes' => [
@@ -45,25 +38,21 @@
                 ],
             ]); ?>
 
-            <button
-                class="site-header__search-toggler site-header__search-toggler--desktop reach-button reach-button--square"
-                aria-expanded="false"
-                aria-controls="site-header-search-form">
-                <span class="visually-hidden">
-                    <?= esc_html__('Expand the search field', 'reach'); ?>
-                </span>
-            </button>
 
-            <?php if (!empty($args['content']['call_to_action_1'])) { ?>
-                <div class="site-header__widgets">
-                    <?= \Reach\Component::get('link', $args['content']['call_to_action_1']); ?>
-                </div>
-            <?php } ?>
-        </div>
+            <div class= 'site-header__icon-row'>
+                <a href="https://www.facebook.com/">
+                    <?= \Reach\Image::get('/social/youtube.svg') ?>
+                </a>
+                <a href="https://www.instagram.com/">
+                     <?= \Reach\Image::get('/social/spotify.svg') ?> 
+                </a>
+                <a href="https://www.twitter.com/">
+                    <?= \Reach\Image::get('/social/apple.svg') ?>
+                </a>
+                <a href="https://www.linkedin.com/">
+                    <?= \Reach\Image::get('/social/amazon.svg') ?>
+                </a>
+            </div>
 
-        <?= \Reach\Component::get('header-search', [
-            'id' => 'site-header-search-form',
-            'classes' => ['js-expandable-element'],
-        ]); ?>
     </div>
 </header>
