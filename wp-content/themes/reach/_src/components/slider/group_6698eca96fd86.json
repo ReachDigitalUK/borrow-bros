@@ -73,13 +73,9 @@
                 "id": ""
             },
             "choices": {
-                "Card Slider": "Card Slider",
-                "Non-Card Slider": "Non-Card Slider",
-                "Custom Slider": "Custom Slider",
-                "Home": "Home",
-                "Reviews": "Reviews"
+                "Seasons": "Seasons"
             },
-            "default_value": "Reviews",
+            "default_value": "Seasons",
             "return_format": "value",
             "multiple": 0,
             "allow_null": 0,
@@ -163,11 +159,11 @@
             "selected": 0
         },
         {
-            "key": "field_6698eca9713d3",
-            "label": "Card Content",
-            "name": "card_source",
+            "key": "field_67a4a3d101bbd",
+            "label": "Season",
+            "name": "season",
             "aria-label": "",
-            "type": "button_group",
+            "type": "taxonomy",
             "instructions": "",
             "required": 0,
             "conditional_logic": 0,
@@ -176,208 +172,17 @@
                 "class": "",
                 "id": ""
             },
-            "choices": {
-                "recent": "Recent Posts",
-                "selected": "Selected Posts",
-                "custom": "Custom Content",
-                "category": "Category",
-                "reviews": "Reviews"
-            },
-            "default_value": "recent",
-            "return_format": "value",
-            "allow_null": 0,
-            "allow_in_bindings": 1,
-            "layout": "horizontal"
-        },
-        {
-            "key": "field_6698eca9713d6",
-            "label": "Custom Cards",
-            "name": "custom_cards",
-            "aria-label": "",
-            "type": "repeater",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": [
-                [
-                    {
-                        "field": "field_6698eca9713d3",
-                        "operator": "==",
-                        "value": "custom"
-                    }
-                ]
-            ],
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "collapsed": "field_5e29665c57d40",
-            "min": 1,
-            "max": 0,
-            "layout": "block",
-            "button_label": "Add Card",
-            "rows_per_page": 20,
-            "sub_fields": [
-                {
-                    "key": "field_6698eca9740d7",
-                    "label": "Heading",
-                    "name": "heading",
-                    "aria-label": "",
-                    "type": "text",
-                    "instructions": "",
-                    "required": 0,
-                    "conditional_logic": 0,
-                    "wrapper": {
-                        "width": "",
-                        "class": "",
-                        "id": ""
-                    },
-                    "default_value": "",
-                    "placeholder": "",
-                    "prepend": "",
-                    "append": "",
-                    "maxlength": "",
-                    "parent_repeater": "field_6698eca9713d6"
-                },
-                {
-                    "key": "field_6698eca9740dc",
-                    "label": "Image",
-                    "name": "image",
-                    "aria-label": "",
-                    "type": "image",
-                    "instructions": "",
-                    "required": 0,
-                    "conditional_logic": 0,
-                    "wrapper": {
-                        "width": "50",
-                        "class": "",
-                        "id": ""
-                    },
-                    "return_format": "array",
-                    "preview_size": "medium",
-                    "library": "all",
-                    "min_width": "",
-                    "min_height": "",
-                    "min_size": "",
-                    "max_width": "",
-                    "max_height": "",
-                    "max_size": "",
-                    "mime_types": "",
-                    "parent_repeater": "field_6698eca9713d6"
-                },
-                {
-                    "key": "field_6698eca9740df",
-                    "label": "Text",
-                    "name": "text",
-                    "aria-label": "",
-                    "type": "wysiwyg",
-                    "instructions": "",
-                    "required": 0,
-                    "conditional_logic": 0,
-                    "wrapper": {
-                        "width": "",
-                        "class": "",
-                        "id": ""
-                    },
-                    "default_value": "",
-                    "tabs": "all",
-                    "toolbar": "basic_formatting",
-                    "media_upload": 0,
-                    "delay": 0,
-                    "parent_repeater": "field_6698eca9713d6"
-                },
-                {
-                    "key": "field_6698eca9740e1",
-                    "label": "Meta",
-                    "name": "meta",
-                    "aria-label": "",
-                    "type": "wysiwyg",
-                    "instructions": "",
-                    "required": 0,
-                    "conditional_logic": 0,
-                    "wrapper": {
-                        "width": "",
-                        "class": "",
-                        "id": ""
-                    },
-                    "default_value": "",
-                    "tabs": "all",
-                    "toolbar": "basic_formatting",
-                    "media_upload": 0,
-                    "delay": 0,
-                    "parent_repeater": "field_6698eca9713d6"
-                },
-                {
-                    "key": "field_6698eca9740e4",
-                    "label": "Link",
-                    "name": "link",
-                    "aria-label": "",
-                    "type": "link",
-                    "instructions": "",
-                    "required": 0,
-                    "conditional_logic": 0,
-                    "wrapper": {
-                        "width": "",
-                        "class": "",
-                        "id": ""
-                    },
-                    "return_format": "array",
-                    "parent_repeater": "field_6698eca9713d6"
-                }
-            ]
-        },
-        {
-            "key": "field_6698eca9713d9",
-            "label": "Post Type",
-            "name": "post_type",
-            "aria-label": "",
-            "type": "button_group",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": [
-                [
-                    {
-                        "field": "field_6698eca9713d3",
-                        "operator": "==",
-                        "value": "recent"
-                    }
-                ]
-            ],
-            "wrapper": {
-                "width": "50",
-                "class": "",
-                "id": ""
-            },
-            "choices": {
-                "post": "Posts",
-                "page": "Page"
-            },
-            "default_value": "",
-            "return_format": "value",
-            "allow_null": 0,
-            "allow_in_bindings": 1,
-            "layout": "horizontal"
-        },
-        {
-            "key": "field_66f28ce3a46b1",
-            "label": "Page Category",
-            "name": "page_category",
-            "aria-label": "",
-            "type": "text",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "default_value": "slider",
-            "maxlength": "",
+            "taxonomy": "category",
+            "add_term": 0,
+            "save_terms": 0,
+            "load_terms": 0,
+            "return_format": "id",
+            "field_type": "checkbox",
             "allow_in_bindings": 0,
-            "placeholder": "",
-            "prepend": "",
-            "append": ""
+            "bidirectional": 0,
+            "multiple": 0,
+            "allow_null": 0,
+            "bidirectional_target": []
         },
         {
             "key": "field_6698eca9713db",
@@ -420,67 +225,6 @@
             "layout": "horizontal"
         },
         {
-            "key": "field_671bc31254ca0",
-            "label": "Slider Category",
-            "name": "slider_category",
-            "aria-label": "",
-            "type": "taxonomy",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "taxonomy": "category",
-            "add_term": 1,
-            "save_terms": 0,
-            "load_terms": 0,
-            "return_format": "object",
-            "field_type": "checkbox",
-            "allow_in_bindings": 1,
-            "bidirectional": 0,
-            "multiple": 0,
-            "allow_null": 0,
-            "bidirectional_target": []
-        },
-        {
-            "key": "field_6698eca9713e1",
-            "label": "Selected Posts",
-            "name": "selected",
-            "aria-label": "",
-            "type": "relationship",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": [
-                [
-                    {
-                        "field": "field_6698eca9713d3",
-                        "operator": "==",
-                        "value": "selected"
-                    }
-                ]
-            ],
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "post_type": "",
-            "taxonomy": "",
-            "filters": [
-                "search",
-                "post_type",
-                "taxonomy"
-            ],
-            "elements": "",
-            "min": "",
-            "max": "",
-            "return_format": "object",
-            "bidirectional_target": []
-        },
-        {
             "key": "field_6698eca9713e5",
             "label": "Options",
             "name": "",
@@ -499,30 +243,23 @@
             "selected": 0
         },
         {
-            "key": "field_6698eca9713ef",
-            "label": "Card Background Color",
-            "name": "card_background_color",
+            "key": "field_67a4aedf2613d",
+            "label": "Card Color",
+            "name": "card_color",
             "aria-label": "",
-            "type": "select",
+            "type": "color_picker",
             "instructions": "",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
-                "width": "50",
+                "width": "",
                 "class": "",
                 "id": ""
             },
-            "choices": {
-                "default": "Default",
-                "none": "None"
-            },
-            "default_value": false,
-            "allow_null": 0,
-            "multiple": 0,
-            "ui": 1,
-            "ajax": 0,
-            "return_format": "value",
-            "placeholder": ""
+            "default_value": "",
+            "enable_opacity": 0,
+            "return_format": "string",
+            "allow_in_bindings": 0
         },
         {
             "key": "field_66c4816bf29e4",
@@ -607,5 +344,5 @@
     "description": "",
     "show_in_rest": 0,
     "reach_save_location": 0,
-    "modified": 1738338792
+    "modified": 1738846153
 }

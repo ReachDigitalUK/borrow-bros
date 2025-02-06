@@ -15,7 +15,6 @@ function filterArgs(array $args): ?array
         'align' => 'alignwide',
         'break_container' => false,
         'items' => [],
-        'reviews' => [],
         'background_colour' => '#FFF',
     ], $args);
 
@@ -55,148 +54,41 @@ function filterArgs(array $args): ?array
             'top_header' => $args['top_header'],
             'classes' => ['slider__top-header'],
         ];
+
     }
-
-    if (!empty($args['all_categories'])) {
-        $args['all_cats'] = $args['all_categories'];
-    }
-
-    if (!empty($args['heading'])) {
-        $args['heading'] = [
-            'heading' => $args['heading'],
-            'classes' => ['slider__heading'],
-        ];
-    }
-
-    if (!empty($args['card_source'])) {
-
-        if ($args['card_source'] === 'recent') {
-            $queryArgs = [
-                'post_type' => 'post',
-                'posts_per_page' => $args['limit'] ?? 10,
-                'post__not_in' => [get_the_ID()],
-                'no_found_rows' => true,
-                'ignore_sticky_posts' => true,
-            ];
-
-            if (!empty($args['all_categories'])) {
-                $queryArgs['category__in'] = $args['all_categories'];
-            }
-
-            if (!empty($args['tag'])) {
-                $queryArgs['tag__in'] = $args['tag'];
-            }
-
-            $query = new \WP_Query($queryArgs);
-
-            if ($query->have_posts()) {
-                foreach ($query->posts as $key => $object) {
-                    $args['items'][$key] = [
-                        'object' => $object,
-                    ];
-                }
-            }
-        } elseif($args['card_source'] === 'reviews'){
-
-            global $wpdb;
-            $table_name = $wpdb->prefix .'grp_google_review';
-            $query = "SELECT * FROM {$table_name} ORDER BY time DESC";
-            $reviews = $wpdb->get_results($query);
+    
+    $options  = [
+        'post_type'      => 'post',
+        'posts_per_page' => -1,
+        'orderby'        => 'date',
+        'order'          => 'ASC',
+    ];
+    
+    $episodes = new \WP_Query($options);
+    
+    if ($episodes->have_posts()) {
+        while ($episodes->have_posts()) {
+            $episodes->the_post(); 
             
-            if ($reviews) {
-                foreach ($reviews as $key => $review) {
-                    $args['items'][$key] = [
-                        'review' => $review,
-                        'id' => $review->id, 
-                        'google_place_id' => $review->google_place_id, 
-                        'rating' => $review->rating, 
-                        'text' => $review->text,
-                        'time' => date('d/m/Y', $review->time), 
-                        'author_name' => $review->author_name, 
-                        'author_url' => $review->author_url, 
-                        'profile_photo_url' => $review->profile_photo_url, 
-                        'language' => $review->language, 
-                    ];
-
-                }
-
-            }
-
-
-
-        }elseif ($args['card_source'] === 'selected') {
-            if (!empty($args['selected'])) {
-                foreach ($args['selected'] as $key => $object) {
-                    $args['items'][$key] = [
-                        'object' => $object,
-                    ];
-                }
-            }
-        } elseif ($args['card_source'] === 'category' && !empty($args['slider_category'])) {
-            $metaQuery = ['relation' => 'OR'];
-
-            foreach ($args['slider_category'] as $category) {
-                $metaQuery[] = [
-                    'key' => 'category',
-                    'value' => is_object($category) ? $category->ID : $category['id'],
-                    'compare' => 'LIKE',
-                ];
-            }
-
-            $sliderArgs = [
-                'posts_per_page' => -1,
-                'post_type' => 'listing',
-                'meta_query' => $metaQuery,
+            $args['items'][] = [
+                'title'       => get_field('episode_title', get_the_ID()),
+                'description' => get_field('episode_description',get_the_ID()),
+                'image'       => get_field('episode_image', get_the_ID()),
+                'duration'    => get_field('episode_duration', get_the_ID()),
+                'date'        => get_field('episode_date', get_the_ID()),
+                'link'        => get_field('episode_link', get_the_ID() ),
             ];
-
-            $query = new \WP_Query($sliderArgs);
-
-            if ($query->have_posts()) {
-                while ($query->have_posts()) {
-                    $query->the_post();
-
-                    $sliderTitle = get_the_title();
-                    $id = get_the_ID();
-                    $author = get_the_author_meta('ID');
-                    $category_id = get_field('category', $id);
-                    $category = $category_id ? get_term($category_id)->name : '';
-                    $background = get_field('images', $id)[0]['image'] ?? '';
-                    $link = get_the_permalink();
-
-                    $subs = wcs_get_users_subscriptions($author);
-
-                    $accreditationLevel = '';
-                    foreach ($subs as $sub) {
-                        if ($sub->get_status() === 'active') {
-                            foreach ($sub->get_items() as $item) {
-                                $productId = $item->get_product_id();
-                                $accreditationLevel = ucfirst(get_field('accreditation_level', $productId));
-                            }
-                        }
-                    }
-
-                    $args['items'][] = [
-                        'sub_level' => $accreditationLevel,
-                        'title' => $sliderTitle,
-                        'categories' => $category,
-                        'background' => $background,
-                        'link' => $link,
-                    ];
-                }
-                wp_reset_postdata();
+    
+            // Add card color if specified
+            if (!empty($args['card_color'])) {
+                $args['items'][array_key_last($args['items'])]['card_color'] = $args['card_color'];
             }
         }
+        wp_reset_postdata(); // Reset the global post data
     }
 
-    // Adjust `type` for icons.
-    if (!empty($args['type']) && $args['type'] === 'icons') {
-        $args['type'] = 'icon';
-    }
 
-    // Add button classes.
-    if (!empty($args['button'])) {
-        $args['button']['classes'] = ['g-button'];
-    }
+    
 
     // Process `items` and add additional properties.
     if (!empty($args['items'])) {
@@ -205,14 +97,6 @@ function filterArgs(array $args): ?array
                 'slider' => true,
                 'type' => $args['type'],
             ], $card);
-
-            if (!empty($args['card_background_color']) && $args['card_background_color'] !== 'default') {
-                $args['items'][$key]['background'] = $args['card_background_color'];
-            }
-
-            if (!empty($args['card_image_fit']) && $args['card_image_fit'] !== 'default') {
-                $args['items'][$key]['image_fit'] = $args['card_image_fit'];
-            }
         }
     }
 
