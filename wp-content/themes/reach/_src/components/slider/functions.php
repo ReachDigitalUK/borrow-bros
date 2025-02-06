@@ -56,39 +56,41 @@ function filterArgs(array $args): ?array
         ];
 
     }
-    
-    $options  = [
-        'post_type'      => 'post',
-        'posts_per_page' => -1,
-        'orderby'        => 'date',
-        'order'          => 'ASC',
-    ];
-    
-    $episodes = new \WP_Query($options);
-    
-    if ($episodes->have_posts()) {
-        while ($episodes->have_posts()) {
-            $episodes->the_post(); 
-            
-            $args['items'][] = [
-                'title'       => get_field('episode_title', get_the_ID()),
-                'description' => get_field('episode_description',get_the_ID()),
-                'image'       => get_field('episode_image', get_the_ID()),
-                'duration'    => get_field('episode_duration', get_the_ID()),
-                'date'        => get_field('episode_date', get_the_ID()),
-                'link'        => get_field('episode_link', get_the_ID() ),
-            ];
-    
-            // Add card color if specified
-            if (!empty($args['card_color'])) {
-                $args['items'][array_key_last($args['items'])]['card_color'] = $args['card_color'];
+
+
+    if($args['slider_type'] === 'Seasons') {
+
+        $options  = [
+            'post_type'      => 'post',
+            'posts_per_page' => -1,
+            'orderby'        => 'date',
+            'order'          => 'ASC',
+        ];
+        
+        $episodes = new \WP_Query($options);
+        
+        if ($episodes->have_posts()) {
+            while ($episodes->have_posts()) {
+                $episodes->the_post(); 
+                
+                $args['items'][] = [
+                    'title'       => get_field('episode_title', get_the_ID()),
+                    'description' => get_field('episode_description',get_the_ID()),
+                    'image'       => get_field('episode_image', get_the_ID()),
+                    'duration'    => get_field('episode_duration', get_the_ID()),
+                    'date'        => get_field('episode_date', get_the_ID()),
+                    'link'        => get_field('episode_link', get_the_ID() ),
+                ];
+        
+                // Add card color if specified
+                if (!empty($args['card_color'])) {
+                    $args['items'][array_key_last($args['items'])]['card_color'] = $args['card_color'];
+                }
             }
+            wp_reset_postdata(); // Reset the global post data
         }
-        wp_reset_postdata(); // Reset the global post data
     }
 
-
-    
 
     // Process `items` and add additional properties.
     if (!empty($args['items'])) {

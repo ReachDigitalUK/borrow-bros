@@ -73,7 +73,8 @@
                 "id": ""
             },
             "choices": {
-                "Seasons": "Seasons"
+                "Seasons": "Seasons",
+                "Icon": "Icon"
             },
             "default_value": "Seasons",
             "return_format": "value",
@@ -83,6 +84,65 @@
             "ui": 0,
             "ajax": 0,
             "placeholder": ""
+        },
+        {
+            "key": "field_67a4d6ae3c8f8",
+            "label": "Icon Images",
+            "name": "icon_images",
+            "aria-label": "",
+            "type": "repeater",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_66a8b5be758ab",
+                        "operator": "==",
+                        "value": "Icon"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "layout": "table",
+            "pagination": 0,
+            "min": 0,
+            "max": 0,
+            "collapsed": "",
+            "button_label": "Add Row",
+            "rows_per_page": 20,
+            "sub_fields": [
+                {
+                    "key": "field_67a4d6e63c8f9",
+                    "label": "Image",
+                    "name": "image",
+                    "aria-label": "",
+                    "type": "image",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "return_format": "url",
+                    "library": "all",
+                    "min_width": "",
+                    "min_height": "",
+                    "min_size": "",
+                    "max_width": "",
+                    "max_height": "",
+                    "max_size": "",
+                    "mime_types": "",
+                    "allow_in_bindings": 0,
+                    "preview_size": "medium",
+                    "parent_repeater": "field_67a4d6ae3c8f8"
+                }
+            ]
         },
         {
             "key": "field_66a8b1bd3ceba",
@@ -344,5 +404,5 @@
     "description": "",
     "show_in_rest": 0,
     "reach_save_location": 0,
-    "modified": 1738846153
+    "modified": 1738857066
 }

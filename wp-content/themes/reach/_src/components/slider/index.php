@@ -14,6 +14,9 @@
             </div>
         <?php } ?>
 
+
+<?php  if($args['slider_type'] === 'Seasons') {?>
+
           <div class="swiper cards-slider">
                 <div class="swiper-wrapper">
                     <?php
@@ -48,6 +51,35 @@
             </div>
         </div>
 </section>
+
+<?php } 
+
+if($args['slider_type'] === 'Icon'){?>
+
+<div class="swiper cards-slider">
+    <div class="swiper-wrapper">
+        <?php
+            foreach ($args['icon_images'] as $logo) {?>
+                <div class="swiper-slide icon-logo">
+                    <img src="<?= $logo['image']; ?>">
+                </div>
+            <?php } ?>
+    </div>
+</div>
+
+<?php } ?>
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
