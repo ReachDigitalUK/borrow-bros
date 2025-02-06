@@ -1,0 +1,133 @@
+{
+    "key": "group_67a4e8ce3692c",
+    "title": "Block - Seasons",
+    "fields": [
+        {
+            "key": "field_67a4e978b9a08",
+            "label": "Main Top",
+            "name": "",
+            "aria-label": "",
+            "type": "tab",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "placement": "top",
+            "endpoint": 1,
+            "selected": 0
+        },
+        {
+            "key": "field_67a4e8ceb9a04",
+            "label": "Title",
+            "name": "title",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "allow_in_bindings": 0,
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_67a4e8ffb9a05",
+            "label": "Description",
+            "name": "description",
+            "aria-label": "",
+            "type": "textarea",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "allow_in_bindings": 0,
+            "rows": "",
+            "placeholder": "",
+            "new_lines": ""
+        },
+        {
+            "key": "field_67a4ecab426ba",
+            "label": "Content",
+            "name": "content",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "allow_in_bindings": 0,
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_67a4ebc0426b9",
+            "label": "Season",
+            "name": "season",
+            "aria-label": "",
+            "type": "taxonomy",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "taxonomy": "category",
+            "add_term": 0,
+            "save_terms": 0,
+            "load_terms": 0,
+            "return_format": "object",
+            "field_type": "checkbox",
+            "allow_in_bindings": 1,
+            "bidirectional": 0,
+            "multiple": 0,
+            "allow_null": 0,
+            "bidirectional_target": []
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "block",
+                "operator": "==",
+                "value": "acf\/season"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "",
+    "show_in_rest": 0,
+    "reach_save_location": 0,
+    "modified": 1738867232
+}

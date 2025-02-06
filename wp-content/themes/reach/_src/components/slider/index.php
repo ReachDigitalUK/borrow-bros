@@ -49,8 +49,7 @@
                         <?php } ?>
                 </div>
             </div>
-        </div>
-</section>
+
 
 <?php } 
 
@@ -67,11 +66,10 @@ if($args['slider_type'] === 'Icon'){?>
     </div>
 </div>
 
+
 <?php } ?>
 
-
-
-
+</section>
 
 
 
