@@ -1,0 +1,266 @@
+// @import 'swiper/css';
+//  @import 'swiper/css/navigation';
+// @import 'swiper/css/pagination';
+
+@import 'swiper/swiper.min';
+@import 'swiper/modules/navigation';
+@import 'swiper/modules/scrollbar';
+
+
+.slider {
+    --text-margin: 2rem 0rem;
+    --text-padding: 0rem;
+    --text-background-colour: transparent;
+    --text-text-colour: inherit;
+    --text-column-size: 1;
+    --text-text-align: left;
+
+    $this: &;
+
+    background: var(--text-background-colour);
+    color: var(--text-text-colour);
+    margin: var(--text-margin);
+    text-align: var(--text-text-align);
+
+
+
+    &__inner {
+        @include align-width--l;
+        z-index: 8;
+        position: relative;
+
+
+        @include mq($until: large) {
+            padding-top: 4em;
+            padding-bottom: 2em;
+        }
+
+
+        padding: var(--text-padding);
+    }
+
+
+    &__top-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 10px;
+
+        @include mq($until: large) {
+            flex-direction: column;
+            align-items: flex-start;
+        }
+
+
+        h2{
+            font-size: 40px;
+            font-family: var(--type--1--font-family);
+            margin-top:0px;
+            margin-bottom: 0px;
+        }
+
+        a{
+            color: #5C5C5C;
+            &::after{
+                
+                    content: "";
+                    display: inline-flex;
+                    height: 20px;
+                    width: 20px;
+                    background-repeat: no-repeat;
+                    background-image: url('/wp-content/themes/reach/_src/images/arrow-right.svg');
+                    top: 10px;
+                    color: #5C5C5C;
+                    position: relative; 
+                    margin-left: 10px;
+         }
+    }
+
+    }
+
+    &__navigation{
+            margin-left: -15px;
+            margin-right: -15px;
+
+            display: flex;
+            gap: 10px;
+            position: relative;
+            top: 250px;
+            justify-content: space-between;
+            z-index: 99999;
+            gap: 10px;
+        svg{
+            width: 40px;
+            cursor: pointer;
+        }
+    }
+
+   .season-card__title{
+        display: flex;
+
+        p{
+            margin-top: 0px;
+            margin-bottom: 0px;
+            font-size: 20px;
+        }
+
+        h3{
+            margin-top: 0px;
+            margin-bottom: 0px;
+            font-size: 50px;
+        }
+
+    }
+
+    .swiper_inner{
+        display: flex;
+        padding: 20px;
+
+    }
+
+    .season-card__infomation{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+    }
+
+    .season-card__link{
+
+        color: #fff;
+
+        p{
+            margin-top: 0px;
+            margin-bottom: 0px;
+            font-size: 30px;
+        }
+
+        a{
+            font-size: 30px;
+            color: #fff;
+            text-decoration: none;
+            margin-left: 20px;
+        }
+
+        &::after{
+            content: "";
+            display: inline-flex;
+            height: 20px;
+            width: 20px;
+            background-repeat: no-repeat;
+            background-image: url('/wp-content/themes/reach/_src/images/play.svg');
+            color: #ffffff;
+            position: relative; 
+            bottom: 10px;
+            margin-left: 8px;
+        }
+
+        display: flex;
+        align-items: flex-end;
+
+    }
+
+  
+    .season-card__date{
+        display: flex;
+        justify-content: flex-end;
+
+        p{
+            margin-top: 20px;
+            margin-bottom: 0px;
+            color: #666666;
+        }
+
+        &:before{
+            content: "";
+            display: inline-flex;
+            height: 20px;
+            width: 20px;
+            background-size: 20px;
+            background-repeat: no-repeat;
+            background-image: url('/wp-content/themes/reach/_src/images/date.svg');
+            color: #666666;
+            position: relative; 
+            margin-right: 5px; 
+            margin-top: 25px;
+        }
+       
+    }
+
+
+    @media screen and (max-width: 992px) {
+
+        #card {
+            width: 300px !important;
+        }
+
+        article {
+            width: 300px !important;
+        }
+
+    }
+
+
+
+
+
+    &.break-slider-container {
+
+        overflow: hidden;
+
+
+        .swiper {
+            overflow: visible;
+        }
+    }
+
+    .swiper-button-disabled {
+        opacity: 0.5;
+    }
+
+    .swiper-scrollbar-horizontal {
+
+        position: relative;
+        margin-top: 40px;
+        height: unset;
+
+        .swiper-scrollbar-drag {
+            height: 10px;
+            background-color: #F7934C;
+        }
+
+
+
+    }
+
+
+
+
+    @media screen and (max-width: 992px) {
+
+
+        #card {
+            width: 250px !important;
+        }
+
+        article {
+            width: 250px !important;
+        }
+
+        .slider .custom-home-width {
+            width: 300px !important;
+        }
+
+
+        &__header-container {
+            flex-direction: column-reverse;
+
+        }
+
+        &__navigation-container {
+            margin-bottom: 20px;
+            align-self: center;
+
+        }
+
+    }
+}

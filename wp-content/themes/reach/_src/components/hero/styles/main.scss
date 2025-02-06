@@ -1,0 +1,60 @@
+.hero {
+    $this: &;
+
+    background-color: #A41B1A;
+    position: relative;
+
+
+
+
+    &::before{
+        content: '';
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        width: 70%;
+        height: 100%;
+        background-image: url('/wp-content/themes/reach/_src/images/background-lads.svg');
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        z-index: 1;
+    }
+
+    &__inner {
+        padding-top: 25em;
+        padding-bottom: 15em;
+        @include align-width--l;
+        display: flex;
+    }
+
+    &__title {
+        z-index: 2;
+        h1{
+                color: #fff;
+                font-size: 15em;
+                line-height: 188px;
+                max-width: 3em;
+            
+        }
+
+
+    }
+
+    &__subheading{
+            color: #fff;
+            font-size: 3em;
+        }
+
+
+    &__content{
+        z-index: 2;
+        align-self: flex-end;
+        margin-left: auto;
+        h2{
+            color: #fff;
+            font-size: 3em;
+        }
+    }
+
+}
