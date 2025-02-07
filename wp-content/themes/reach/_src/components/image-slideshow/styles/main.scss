@@ -54,7 +54,7 @@
             transition: height 0.2s linear;
 
             @include mq($until: large) {
-                width: 25dvw;
+                width: 20dvw;
             }
 
             &:after {

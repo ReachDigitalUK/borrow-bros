@@ -19,7 +19,7 @@ $site-header--top--background: 'white';
 }
 
 .site-header {
-    --site-header--height: 14em;
+    --site-header--height: 16em;
     --site-header--logo-width: #{rem(120)};
 
     --site-header--spacing: var(--space--m);
@@ -39,19 +39,28 @@ $site-header--top--background: 'white';
 
     position: sticky;
     top: 0;
-    margin-top: -74px;
-    background-color: initial!important;
+    margin-top: -300px;
+
+    background-color: transparent!important;
+
+
+    @include mq($until: 'site-header') {
+        margin-top: 0;
+    }
+    
 
     @include mq('site-header') {
         --site-header--spacing: var(--space--l);
         --site-header--logo-width: #{rem(170)};
-        --site-header--height: #{rem(74)};
+        --site-header--height: 11em;
         --site-header--button-size: #{rem(42)};
 
         background-color: var(--color--white);
     }
 
     @include mq($until: 'site-header') {
+
+
         &--positioned {
             position: absolute;
 
@@ -84,7 +93,6 @@ $site-header--top--background: 'white';
 
     &__top {
         display: flex;
-        height: 14em;
         align-items: center;
         padding-right: var(--space--container-padding);
         padding-left: var(--space--container-padding);
@@ -92,10 +100,15 @@ $site-header--top--background: 'white';
         gap: var(--site-header--spacing);
         justify-items: flex-end;
 
+        @include mq($until: 'site-header') {
+            height: 8em;
+        }
+
         @include mq('site-header') {
             padding-right: 0;
             padding-left: 0;
             background-color: transparent;
+          
         }
     }
 
@@ -109,6 +122,8 @@ $site-header--top--background: 'white';
         @include mq($until: 'site-header') {
             --link--color: var(--color--foreground);
             --link--color--hover: var(--color--foreground);
+
+             background-color: #1F1F1F!important;
 
             @include color-context($site-header--bottom--background);
 
@@ -288,4 +303,10 @@ $site-header--top--background: 'white';
         left: 0;
         width: 100%;
     }
+}
+
+.scrolled{
+    background-color: #A41B1A!important;
+    transition: background-color 0.5s;
+    box-shadow: rgba(0, 0, 0, 0.2) -3px 4px 5px 0px;
 }

@@ -26,6 +26,11 @@
         padding-bottom: 15em;
         @include align-width--l;
         display: flex;
+
+        @include mq($until: large) {
+            padding-top: 3em;
+            flex-direction: column;
+        }
     }
 
     &__title {
@@ -35,6 +40,11 @@
                 font-size: 15em;
                 line-height: 188px;
                 max-width: 3em;
+
+                @include mq($until: medium) {
+                    font-size: 8em;
+                    line-height: 125px;
+                }
             
         }
 
@@ -44,6 +54,7 @@
     &__subheading{
             color: #fff;
             font-size: 3em;
+            
         }
 
 
@@ -54,6 +65,12 @@
         h2{
             color: #fff;
             font-size: 3em;
+            font-family: var(--type--2--font-family);
+        }
+
+        @include mq($until: large) {
+            align-self: flex-start;
+            margin-left: 0;
         }
     }
 
