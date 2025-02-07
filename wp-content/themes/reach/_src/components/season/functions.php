@@ -85,7 +85,8 @@ function filterArgs(array $args): ?array
         $args['items'] = [];
     }
     
-
+//make the remaining items in ASC order
+    $args['items'] = array_reverse($args['items']);
 
 
 

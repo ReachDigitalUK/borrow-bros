@@ -3,8 +3,8 @@
     "title": "Block - Seasons",
     "fields": [
         {
-            "key": "field_67a4e978b9a08",
-            "label": "Main Top",
+            "key": "field_67a5d1206c66f",
+            "label": "Block Settings",
             "name": "",
             "aria-label": "",
             "type": "tab",
@@ -108,6 +108,28 @@
             "multiple": 0,
             "allow_null": 0,
             "bidirectional_target": []
+        },
+        {
+            "key": "field_67a5d1031fe73",
+            "label": "Styling",
+            "name": "styling",
+            "aria-label": "",
+            "type": "clone",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "clone": [
+                "group_672b6163d608e"
+            ],
+            "display": "seamless",
+            "layout": "block",
+            "prefix_label": 0,
+            "prefix_name": 0
         }
     ],
     "location": [
@@ -129,5 +151,5 @@
     "description": "",
     "show_in_rest": 0,
     "reach_save_location": 0,
-    "modified": 1738867232
+    "modified": 1738920358
 }

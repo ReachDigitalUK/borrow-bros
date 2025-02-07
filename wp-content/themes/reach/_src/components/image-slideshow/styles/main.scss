@@ -31,10 +31,11 @@
     &__controls {
         display: flex;
         gap: 2rem;
-        justify-content: center;
+        justify-content: flex-start;
         padding: 2rem 0;
         align-items: center;
         height: 10px;
+        @include align-width--l;
 
         @include mq($until: medium) {
             padding: 2rem;
@@ -47,7 +48,7 @@
         &__indicator {
             height: 6px;
             width: 120px;
-            background: var(--color--brand-2);
+            background:#fff;
             position: relative;
             cursor: pointer;
             transition: height 0.2s linear;

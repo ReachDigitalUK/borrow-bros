@@ -1,10 +1,27 @@
 .season {
+    --text-margin: 2rem 0rem;
+    --text-padding: 0rem;
+    --text-background-colour: transparent;
+    --text-text-colour: inherit;
+    --text-column-size: 1;
+    --text-text-align: left;
+
     $this: &;
+
+    background: var(--text-background-colour);
+    color: var(--text-text-colour);
+    margin: var(--text-margin);
+    text-align: var(--text-text-align);
+
 
     &__inner {
         @include align-width--l;
+        padding: var(--text-padding);
     }
 
+
+
+    /* top episode */
 
     &__top-content {
 
@@ -24,7 +41,8 @@
 
         img{
             width: 200px;
-            align-self: center;
+            margin-top: 10px;
+            margin-bottom: 20px;
         }
 
         h3{
@@ -51,6 +69,7 @@
     &__number{
         display: flex;
         width: 50%;
+        color: #fff;
 
         p{
             margin-top: 0px;
@@ -66,15 +85,69 @@
         }
 
     }
+
+
+    &__featured-date{
+        color: #B64847;
+
+        &:before{
+            content: "";
+            display: inline-flex;
+            height: 20px;
+            width: 20px;
+            background-size: 20px;
+            background-repeat: no-repeat;
+            background-image: url('/wp-content/themes/reach/_src/images/date.svg');
+            color: #B64847;
+            fill: #B64847;
+            position: relative; 
+            margin-right: 5px; 
+            margin-top: 25px;
+        }
+      
+    }
+
     &__number-top{
         display: flex;
-
-
 
         img{
             width: 50%
         }
     }
+
+
+    &__episode_description{
+        display: flex;
+        flex-direction: column;
+        width: 50%;
+
+        p{
+            margin-top: 0px;
+            margin-bottom: 0px;
+            font-size: 26px;
+        }
+
+        a{
+            color: #fff;
+            text-decoration: none;
+            font-size: 30px;
+
+            &::after{
+                content: "";
+                display: inline-flex;
+                height: 20px;
+                width: 20px;
+                background-repeat: no-repeat;
+                background-image: url('/wp-content/themes/reach/_src/images/play.svg');
+                color: #ffffff;
+                position: relative; 
+                margin-left: 8px;
+            }
+        }
+    }
+
+     /* middle episodes */
+
 
     &__middle-content{
         display: flex;
@@ -83,7 +156,6 @@
     &__episode-spacer{
         width:40%;
     }
-
 
     &__episodes-list{
         display: flex;
@@ -98,8 +170,97 @@
         width: 100%;
         display: flex;
         flex-direction: column;
-        gap: 10px;
+        gap: 100px;
         margin-top: 10px;
     }
+
+    &__episode-number{
+        display: flex;
+        color: #fff;
+
+        p{
+            margin-top: 0px;
+            margin-bottom: 0px;
+            font-size: 40px;
+        }
+
+        h2{
+            margin-top: 0px;
+            margin-bottom: 0px;
+            font-size: 80px;
+        }
+
+        img{
+            width: 70%;
+        }
+
+     
+    }
+
+
+
+    &__episode-number-top{
+        width: 50%;
+    }
+
+
+   &__episode-description-bottom{
+
+     display: flex;
+
+     p{
+            margin-top: 0px;
+            margin-bottom: 0px;
+            font-size: 26px;
+            margin-left: auto;
+            color: #B64847;
+
+
+                &:before{
+                    content: "";
+                    display: inline-flex;
+                    height: 20px;
+                    width: 20px;
+                    background-size: 20px;
+                    background-repeat: no-repeat;
+                    background-image: url('/wp-content/themes/reach/_src/images/date.svg');
+                    color: #B64847;
+                    fill: #B64847;
+                    position: relative; 
+                    margin-right: 5px; 
+                    margin-top: 25px;
+                }
+
+
+
+     }
+
+     a{
+            color: #fff;
+            text-decoration: none;
+            font-size: 30px;
+
+            &::after{
+                content: "";
+                display: inline-flex;
+                height: 20px;
+                width: 20px;
+                background-repeat: no-repeat;
+                background-image: url('/wp-content/themes/reach/_src/images/play.svg');
+                color: #ffffff;
+                position: relative; 
+                margin-left: 8px;
+            }
+        }
+     
+
+    }
+
+
+
+
+
+
+    /* bottom episodes */
 
 }

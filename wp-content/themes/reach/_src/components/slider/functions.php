@@ -16,6 +16,7 @@ function filterArgs(array $args): ?array
         'break_container' => false,
         'items' => [],
         'background_colour' => '#FFF',
+        'episodes' => [],
     ], $args);
 
     if ($args['break_container']) {
@@ -99,6 +100,19 @@ function filterArgs(array $args): ?array
                 'slider' => true,
                 'type' => $args['type'],
             ], $card);
+        }
+    }
+
+
+
+    if(!empty($args['episodes'])) {
+        $args['items'] = $args['episodes'];
+
+
+        if (!empty($args['card_color'])) {
+            foreach ($args['items'] as $key => $card) {
+                $args['items'][$key]['card_color'] = $args['card_color'];
+            }
         }
     }
 
