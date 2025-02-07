@@ -22,7 +22,7 @@
                     <?php
                         foreach ($args['items'] as $key => $card) {?>
                             <div class="swiper-slide season-card">
-                                <div class="swiper_inner" style=background-color:<?= $card['card_color']; ?>;>
+                                <div class="swiper_inner" style='background-color:<?= $card['card_color']; ?>;'>
                                     <div class='season-card__infomation'>
                                         <div class='season-card__title'>
                                             <p>EP.</p>
@@ -49,8 +49,7 @@
                         <?php } ?>
                 </div>
             </div>
-        </div>
-</section>
+
 
 <?php } 
 
@@ -67,11 +66,10 @@ if($args['slider_type'] === 'Icon'){?>
     </div>
 </div>
 
+
 <?php } ?>
 
-
-
-
+</section>
 
 
 
