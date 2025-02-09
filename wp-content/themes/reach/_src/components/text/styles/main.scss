@@ -18,11 +18,14 @@
         padding: var(--text-padding)
     }
 
-    &__heading {
+    &__header {
             margin-bottom: 0px;
             font-size: 60px;
-            max-width: 330px;
             line-height: 55px;
+
+            @include mq($until: large) {
+               max-width: 100%!important;
+            }
     }
 
     &__columns {
@@ -33,6 +36,7 @@
 
         @include mq($until: large) {
             grid-template-columns: repeat(var(--text-column-size) / 2, 1fr);
+            width: 100%;
         }
 
         @include mq($until: medium) {

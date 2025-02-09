@@ -43,3 +43,8 @@ $asset-path-prefix: './';
 // Utilities/Trumps
 // ----------------------------------------------
 @import './styles/7-utilities/';
+
+
+p, a{
+    font-family: var(--type--2--font-family);
+}

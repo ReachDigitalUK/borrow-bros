@@ -18,7 +18,17 @@
     &__inner {
         @include align-width--l;
         padding: var(--text-padding);
+
+        @include mq($until: large) {
+            padding-top: 1em;
+            padding-bottom: 0em;
+        }
     }
 
+
+    &__header {
+        margin-bottom: 0px;
+        font-size: 80px;
+    }
 
 }
