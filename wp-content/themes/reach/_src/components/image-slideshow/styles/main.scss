@@ -36,6 +36,9 @@
         align-items: center;
         height: 10px;
         @include align-width--l;
+        position: relative;
+        z-index: 99;
+        bottom: 60px;
 
         @include mq($until: medium) {
             padding: 2rem;
@@ -89,7 +92,7 @@
         background-position: center;
         display: flex;
         justify-content: center;
-        align-items: flex-end;
+        align-items: center;
         position: absolute;
         z-index: 2;
         transition: opacity 1s;
@@ -136,7 +139,7 @@
             &__heading {
                 font-size: 48px;
                 font-family: var(--type--2--font-family);
-                margin-bottom: 2rem;
+                margin-bottom: 1rem;
 
                 @include mq($until: medium) {
                     font-size: 32px;
@@ -145,7 +148,7 @@
             }
 
             &__description {
-                margin-bottom: 4rem;
+                margin-bottom: 1rem;
 
                 @include mq($until: medium) {
                     margin-bottom: 2rem;
@@ -154,9 +157,29 @@
             }
 
             &__link {
+
+                padding: 10px 30px;
+                background-color: #DA2626;
+                border-radius: 99px;
                 a {
                     color: var(--image-slideshow--link-colour);
+                    text-decoration: none;
+
+                    &::after{
+                        content: "";
+                        display: inline-flex;
+                        height: 20px;
+                        width: 20px;
+                        background-repeat: no-repeat;
+                        background-image: url('/wp-content/themes/reach/_src/images/play.svg');
+                        color: #ffffff;
+                        position: relative; 
+                        margin-left: 8px;
+                        top:5px;
+                    }
                 }
+
+
             }
         }
     }

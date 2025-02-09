@@ -22,6 +22,10 @@
             margin-bottom: 0px;
             font-size: 60px;
             line-height: 55px;
+
+            @include mq($until: large) {
+               max-width: 100%!important;
+            }
     }
 
     &__columns {

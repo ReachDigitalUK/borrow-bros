@@ -113,7 +113,7 @@
             width: 20px;
             background-size: 20px;
             background-repeat: no-repeat;
-            background-image: url('/wp-content/themes/reach/_src/images/date.svg');
+            background-image: url('/wp-content/themes/reach/_src/images/main.svg');
             color: #B64847;
             fill: #B64847;
             position: relative; 
@@ -237,11 +237,12 @@
    &__episode-description-bottom{
 
      display: flex;
+     align-items: baseline;
 
      p{
             margin-top: 0px;
             margin-bottom: 0px;
-            font-size: 26px;
+            font-size: 18px;
             margin-left: auto;
             color: #B64847;
 
@@ -253,7 +254,7 @@
                     width: 20px;
                     background-size: 20px;
                     background-repeat: no-repeat;
-                    background-image: url('/wp-content/themes/reach/_src/images/date.svg');
+                    background-image: url('/wp-content/themes/reach/_src/images/main.svg');
                     color: #B64847;
                     fill: #B64847;
                     position: relative; 

@@ -307,6 +307,11 @@ $site-header--top--background: 'white';
 
 .scrolled{
     background-color: #A41B1A!important;
-    transition: background-color 0.5s;
+    transition: all .5s;
     box-shadow: rgba(0, 0, 0, 0.2) -3px 4px 5px 0px;
+    height: 9em!important;
+
+    .img-fit img{
+        width: 70px!important;
+    }
 }
