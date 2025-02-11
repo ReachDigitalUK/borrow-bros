@@ -17,6 +17,11 @@
     &__inner {
         @include align-width--l;
         padding: var(--text-padding);
+
+        @include mq($until: large) {
+            padding-top: 4em;
+            padding-bottom: 1em;
+        }
     }
 
 
@@ -26,6 +31,7 @@
     &__top-content {
 
         display: flex;
+        gap: 10px;
 
         @include mq($until: large) {
             flex-direction: column;
@@ -49,7 +55,7 @@
 
         img{
             width: 200px;
-            margin-top: 10px;
+            margin-top: 20px;
             margin-bottom: 20px;
         }
 
@@ -85,6 +91,7 @@
 
         @include mq($until: large) {
             width: 100%;
+            flex-direction: column;
         }
 
         p{
@@ -127,7 +134,11 @@
         display: flex;
 
         img{
-            width: 50%
+            width: 50%;
+
+            @include mq($until: large) {
+                width: 70%;
+            }
         }
     }
 
@@ -137,10 +148,19 @@
         flex-direction: column;
         width: 50%;
 
+        @include mq($until: large) {
+            width: 100%;
+        }
+
         p{
             margin-top: 0px;
             margin-bottom: 0px;
             font-size: 26px;
+
+            @include mq($until: large) {
+                font-size: 16px;
+                margin-top: 10px;
+            }
         }
 
         a{
@@ -185,7 +205,7 @@
         display: flex;
         justify-content: flex-end;
         width: 60%;
-        gap: 10px;
+        gap: 20px;
 
         @include mq($until: large) {
             width: 100%;
@@ -200,8 +220,12 @@
         width: 100%;
         display: flex;
         flex-direction: column;
-        gap: 100px;
-        margin-top: 10px;
+        gap: 50px;
+        margin-top: 20px;
+
+        @include mq($until: large) {
+            gap: 20px;
+        }
     }
 
     &__episode-number{
@@ -231,6 +255,11 @@
 
     &__episode-number-top{
         width: 50%;
+    }
+
+
+    &__episode-description{
+        font-size: 26px;
     }
 
 

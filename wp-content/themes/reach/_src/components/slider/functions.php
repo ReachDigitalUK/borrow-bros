@@ -58,7 +58,6 @@ function filterArgs(array $args): ?array
 
     }
 
-
     if($args['slider_type'] === 'Seasons') {
 
         $options  = [
@@ -76,13 +75,17 @@ function filterArgs(array $args): ?array
                 
                 $args['items'][] = [
                     'title'       => get_field('episode_title', get_the_ID()),
-                    'description' => get_field('episode_description',get_the_ID()),
+                    'description' => mb_strimwidth(get_field('episode_description', get_the_ID()), 0, 100, '...'),
                     'image'       => get_field('episode_image', get_the_ID()),
                     'duration'    => get_field('episode_duration', get_the_ID()),
                     'date'        => get_field('episode_date', get_the_ID()),
                     'link'        => get_field('episode_link', get_the_ID() ),
                 ];
-        
+
+
+
+
+
                 // Add card color if specified
                 if (!empty($args['card_color'])) {
                     $args['items'][array_key_last($args['items'])]['card_color'] = $args['card_color'];
@@ -135,9 +138,7 @@ function filterArgs(array $args): ?array
 
 
 
-    // echo '<pre>';
-    // print_r($args);
-    // echo '</pre>';
+   
 
 
  return $args;

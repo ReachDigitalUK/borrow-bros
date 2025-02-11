@@ -17,7 +17,7 @@
     }
 
     &__right{
-        width: 50%;
+        width: 75%;
 
         @include mq($until: large) {
             width: 100%;
@@ -28,5 +28,11 @@
 
     &__content__item{
         border-top: 4px solid #000;
+
+        h3{
+            text-transform: uppercase;
+            margin-top: 10px;
+
+        }
     }
 }

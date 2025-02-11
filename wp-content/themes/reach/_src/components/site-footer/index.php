@@ -18,16 +18,16 @@
 
             <div class="site-footer__icon-row">
                 <a href="https://www.facebook.com/">
-                    <?= \Reach\Image::get('/social/youtube.svg') ?>
+                    <?= \Reach\Image::get('/social/youtube-white.svg') ?>
                 </a>
                 <a href="https://www.instagram.com/">
-                     <?= \Reach\Image::get('/social/spotify.svg') ?> 
+                     <?= \Reach\Image::get('/social/spotify-white.svg') ?> 
                 </a>
                 <a href="https://www.twitter.com/">
-                    <?= \Reach\Image::get('/social/apple.svg') ?>
+                    <?= \Reach\Image::get('/social/apple-white.svg') ?>
                 </a>
                 <a href="https://www.linkedin.com/">
-                    <?= \Reach\Image::get('/social/amazon.svg') ?>
+                    <?= \Reach\Image::get('/social/amazon-white.svg') ?>
                 </a>
             </div>
 

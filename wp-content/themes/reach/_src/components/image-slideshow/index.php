@@ -16,17 +16,18 @@
                             </div>
                         <?php } ?>
 
+                        <?php if (!empty($slide['link'])) { ?>
+                            <div class="image-slideshow__slide__content__link">
+                                <?= $slide['link']; ?>
+                            </div>
+                        <?php } ?>
+
                         <?php if (!empty($slide['description'])) { ?>
                             <div class="image-slideshow__slide__content__description">
                                 <?= $slide['description']; ?>
                             </div>
                         <?php } ?>
 
-                        <?php if (!empty($slide['link'])) { ?>
-                            <div class="image-slideshow__slide__content__link">
-                                <?= $slide['link']; ?>
-                            </div>
-                        <?php } ?>
                     </div>
                 </div>
             <?php } ?>
