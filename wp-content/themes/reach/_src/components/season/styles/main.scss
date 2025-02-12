@@ -31,7 +31,7 @@
     &__top-content {
 
         display: flex;
-        gap: 10px;
+        gap: 20px;
 
         @include mq($until: large) {
             flex-direction: column;
@@ -91,7 +91,7 @@
 
         @include mq($until: large) {
             width: 100%;
-            flex-direction: column;
+            flex-direction: row;
         }
 
         p{
@@ -137,8 +137,12 @@
             width: 50%;
 
             @include mq($until: large) {
-                width: 70%;
+                width: 100%;
             }
+        }
+
+        @include mq($until: large) {
+            flex-direction: column-reverse;
         }
     }
 
@@ -187,6 +191,7 @@
 
     &__middle-content{
         display: flex;
+        gap: 20px;
 
         @include mq($until: large) {
             flex-direction: column;
@@ -224,13 +229,17 @@
         margin-top: 20px;
 
         @include mq($until: large) {
-            gap: 20px;
+            gap: 0px;
         }
     }
 
     &__episode-number{
         display: flex;
         color: #fff;
+
+            @include mq($until: large) {
+                flex-direction: column-reverse;
+            }
 
         p{
             margin-top: 0px;
@@ -246,6 +255,10 @@
 
         img{
             width: 70%;
+
+            @include mq($until: small) {
+                width: 100%;
+            }
         }
 
      
@@ -254,7 +267,17 @@
 
 
     &__episode-number-top{
-        width: 50%;
+        width: 50%; 
+
+
+        @include mq($until: large) {
+            width: 100%;
+            margin-top: 20px;
+            display: flex;
+        }
+      
+
+
     }
 
 
