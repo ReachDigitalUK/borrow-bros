@@ -15,7 +15,7 @@ $site-header--top--background: 'white';
 
     @include mq('site-header') {
         --submenu--transition-duration: 250ms;
-    }
+     }
 }
 
 .site-header {
@@ -35,7 +35,7 @@ $site-header--top--background: 'white';
     width: 100%;
     height: var(--site-header--height);
     background-color: var(--color--#{$site-header--bottom--background});
-    transition: height var(--site-header--menu--duration) var(--site-header--menu--duration);
+   // transition: height var(--site-header--menu--duration) var(--site-header--menu--duration);
 
     position: sticky;
     top: 0;
@@ -52,7 +52,7 @@ $site-header--top--background: 'white';
     @include mq('site-header') {
         --site-header--spacing: var(--space--l);
         --site-header--logo-width: #{rem(170)};
-        --site-header--height: 11em;
+        --site-header--height: 8em;
         --site-header--button-size: #{rem(42)};
 
         background-color: var(--color--white);
@@ -305,13 +305,26 @@ $site-header--top--background: 'white';
     }
 }
 
-.scrolled{
-    background-color: #A41B1A!important;
-    transition: all .5s;
-    box-shadow: rgba(0, 0, 0, 0.2) -3px 4px 5px 0px;
-    height: 9em!important;
+.img-fit img {
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity 0.2s ease-in-out, visibility 0.2s; /* Add smooth transition */
+    width: 70px !important;
 
-    .img-fit img{
-        width: 70px!important;
+    @include mq($until: 'site-header') {
+        display: block;
+    }
+}
+
+.scrolled {
+    background-color: #A41B1A !important;
+    transition: background-color 0.2s ease-in-out, opacity 0.2s ease-in-out;
+    box-shadow: rgba(0, 0, 0, 0.2) -3px 4px 5px 0px;
+    height: 8em !important;
+
+    .img-fit img {
+        width: 70px !important;
+        visibility: visible;
+     opacity: 1;
     }
 }

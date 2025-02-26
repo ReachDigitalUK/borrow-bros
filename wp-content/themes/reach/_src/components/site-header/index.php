@@ -4,7 +4,7 @@
             <?= \Reach\Component::get('link', [
                 'url' => home_url('/'),
                 'classes' => ['site-header__logo', 'img-fit'],
-                'content' => \Reach\Image::get('logo.svg', [
+                'content' => \Reach\Image::get('download.svg', [
                     'alt' => get_bloginfo('name'),
                     'loading' => false,
                     'attributes' => [

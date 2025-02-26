@@ -13,6 +13,9 @@
     margin: var(--text-margin);
     text-align: var(--text-text-align);
 
+
+
+   
     &__inner {
         @include align-width--l;
         padding: var(--text-padding)
