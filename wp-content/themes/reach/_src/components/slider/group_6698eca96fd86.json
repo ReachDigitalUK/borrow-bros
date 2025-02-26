@@ -86,6 +86,33 @@
             "placeholder": ""
         },
         {
+            "key": "field_67ab465ae3d55",
+            "label": "Slider Status",
+            "name": "slider_status",
+            "aria-label": "",
+            "type": "select",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "static": "Static",
+                "live": "Live"
+            },
+            "default_value": "Static",
+            "return_format": "value",
+            "multiple": 0,
+            "allow_null": 0,
+            "allow_in_bindings": 0,
+            "ui": 0,
+            "ajax": 0,
+            "placeholder": ""
+        },
+        {
             "key": "field_67a4d6ae3c8f8",
             "label": "Icon Images",
             "name": "icon_images",
@@ -220,7 +247,7 @@
         },
         {
             "key": "field_67a4a3d101bbd",
-            "label": "Season",
+            "label": "Season or Category",
             "name": "season",
             "aria-label": "",
             "type": "taxonomy",
@@ -342,27 +369,6 @@
             "ui": 1
         },
         {
-            "key": "field_67289198828c5",
-            "label": "Show Button",
-            "name": "show_button",
-            "aria-label": "",
-            "type": "true_false",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "message": "",
-            "default_value": 0,
-            "allow_in_bindings": 0,
-            "ui": 0,
-            "ui_on_text": "",
-            "ui_off_text": ""
-        },
-        {
             "key": "field_6798be3713023",
             "label": "Styling",
             "name": "styling",
@@ -404,5 +410,5 @@
     "description": "",
     "show_in_rest": 0,
     "reach_save_location": 0,
-    "modified": 1738860631
+    "modified": 1739278126
 }

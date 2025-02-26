@@ -3,7 +3,7 @@
 
     <?php if(!empty($args['top_header_slider'])) { ?>
             <div class="slider__top-header">
-                <h2><?= $args['top_header_slider']; ?></h2>
+            <?php if($args['slider_status']){ echo '<div class="slider__live">LIVE</div>';} ?><h2><?= $args['top_header_slider']; ?></h2>
             </div>
         <?php } ?>
 
@@ -15,6 +15,7 @@
         <?php } ?>
 
 
+
 <?php  if($args['slider_type'] === 'Seasons') {?>
 
           <div class="swiper cards-slider">
@@ -22,7 +23,7 @@
                     <?php
                         foreach ($args['items'] as $key => $card) {?>
                             <div class="swiper-slide season-card">
-                                <div class="swiper_inner" style=background-color:<?= $card['card_color']; ?>;>
+                                <div class="swiper_inner" style='background-color:<?= $card['card_color']; ?>;'>
                                     <div class='season-card__infomation'>
                                         <div class='season-card__title'>
                                             <p>EP.</p>
@@ -33,7 +34,16 @@
                                         </div>
                                         <div class='season-card__link'>
                                             <p>Watch</p>
-                                            <a href="<?php if(!empty($card['link'])){ echo $card['link'];}else{echo '/';}; ?>"><?php if(!empty($card['duration'])){ echo $card['duration'];}else{echo 'No Time Set';}; ?> </a>
+                                            <?php 
+                                                if ($args['slider_status']) { 
+                                                    echo '<div class="slider__live_slide">LIVE</div>';
+                                                } else {
+                                                    $link = !empty($card['link']) ? $card['link'] : '/';
+                                                    $duration = !empty($card['duration']) ? $card['duration'] : 'No Time Set';
+
+                                                    echo '<a href="' . esc_url($link) . '">' . esc_html($duration) . '</a>';
+                                                } 
+                                                ?>
                                          </div>
                                     </div>
                                     <div class='season-card__details'>

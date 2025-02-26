@@ -35,6 +35,10 @@
         padding: 2rem 0;
         align-items: center;
         height: 10px;
+        @include align-width--l;
+        position: relative;
+        z-index: 99;
+        bottom: 60px;
 
         @include mq($until: medium) {
             padding: 2rem;
@@ -47,13 +51,13 @@
         &__indicator {
             height: 6px;
             width: 120px;
-            background: var(--color--brand-2);
+            background:#f37b7b;
             position: relative;
             cursor: pointer;
             transition: height 0.2s linear;
 
             @include mq($until: large) {
-                width: 25dvw;
+                width: 10dvw;
             }
 
             &:after {
@@ -88,7 +92,7 @@
         background-position: center;
         display: flex;
         justify-content: center;
-        align-items: flex-end;
+        align-items: center;
         position: absolute;
         z-index: 2;
         transition: opacity 1s;
@@ -127,15 +131,15 @@
             color: var(--image-slideshow--text-colour);
 
             &__subheading {
-                font-size: 21px;
-                font-weight: 600;
+                font-size: 70px;
+                font-weight: 400;
                 text-transform: uppercase;
             }
 
             &__heading {
                 font-size: 48px;
                 font-family: var(--type--2--font-family);
-                margin-bottom: 2rem;
+                margin-bottom: 10px;
 
                 @include mq($until: medium) {
                     font-size: 32px;
@@ -144,7 +148,9 @@
             }
 
             &__description {
-                margin-bottom: 4rem;
+                margin-top: 1rem;
+                font-family: var(--type--2--font-family);
+                font-size: 23px;
 
                 @include mq($until: medium) {
                     margin-bottom: 2rem;
@@ -153,9 +159,30 @@
             }
 
             &__link {
+
+                padding: 10px 30px;
+                background-color: #DA2626;
+                border-radius: 99px;
+                margin-bottom: 10px;
                 a {
                     color: var(--image-slideshow--link-colour);
+                    text-decoration: none;
+
+                    &::after{
+                        content: "";
+                        display: inline-flex;
+                        height: 20px;
+                        width: 20px;
+                        background-repeat: no-repeat;
+                        background-image: url('/wp-content/themes/reach/_src/images/play.svg');
+                        color: #ffffff;
+                        position: relative; 
+                        margin-left: 8px;
+                        top:5px;
+                    }
                 }
+
+
             }
         }
     }

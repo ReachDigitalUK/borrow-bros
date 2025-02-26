@@ -43,3 +43,25 @@ $asset-path-prefix: './';
 // Utilities/Trumps
 // ----------------------------------------------
 @import './styles/7-utilities/';
+
+
+p, a{
+    font-family: var(--type--2--font-family);
+}
+
+body::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    // width: 100vw;
+    // height: 100vh;
+    background-image: url('/wp-content/themes/reach/_src/images/Grain.jpg');
+    background-size: 100px 100px;
+    background-repeat: repeat;
+    background-position: 100%;
+    opacity: 1; /* Adjust for subtle effect */
+    pointer-events: none; /* Ensures it doesn’t interfere with clicks */
+    z-index: -1; /* Places it behind content */
+    visibility: visible!important;
+}

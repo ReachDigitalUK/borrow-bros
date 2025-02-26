@@ -53,7 +53,7 @@ function filterArgs(array $args): ?array
     
             $args['items'][] = [
                 'title'       => get_field('episode_title', get_the_ID()),
-                'description' => get_field('episode_description', get_the_ID()),
+                'description' => mb_strimwidth(get_field('episode_description', get_the_ID()), 0, 100, '...'),
                 'image'       => get_field('episode_image', get_the_ID()),
                 'duration'    => get_field('episode_duration', get_the_ID()),
                 'date'        => get_field('episode_date', get_the_ID()),
@@ -85,7 +85,8 @@ function filterArgs(array $args): ?array
         $args['items'] = [];
     }
     
-
+//make the remaining items in ASC order
+    $args['items'] = array_reverse($args['items']);
 
 
 

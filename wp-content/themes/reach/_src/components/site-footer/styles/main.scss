@@ -29,7 +29,7 @@
         a {
             display: inline-block;
             width: 100%;
-            max-width: rem(130);
+            max-width: 13rem;
 
             @include mq(medium) {
                 max-width: rem(165);
@@ -110,6 +110,13 @@
 
         > * {
             object-fit: contain;
+        }
+    }
+
+
+    &__motto{
+        h3{
+            font-family: var(--type--2--font-family);
         }
     }
 

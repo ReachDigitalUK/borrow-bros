@@ -13,26 +13,33 @@
     margin: var(--text-margin);
     text-align: var(--text-text-align);
 
+
+
+   
     &__inner {
         @include align-width--l;
         padding: var(--text-padding)
     }
 
-    &__heading {
+    &__header {
             margin-bottom: 0px;
             font-size: 60px;
-            max-width: 330px;
             line-height: 55px;
+
+            @include mq($until: large) {
+               max-width: 100%!important;
+            }
     }
 
     &__columns {
         display: grid;
         grid-template-columns: repeat(var(--text-column-size), 1fr);
         gap: 2rem;
-        width: 50%;
+        width: 75%;
 
         @include mq($until: large) {
             grid-template-columns: repeat(var(--text-column-size) / 2, 1fr);
+            width: 100%;
         }
 
         @include mq($until: medium) {

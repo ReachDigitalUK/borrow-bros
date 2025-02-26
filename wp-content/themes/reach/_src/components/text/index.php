@@ -1,7 +1,9 @@
 <section <?= \Reach\Helpers::buildAttributes($args['attributes']); ?>>
     <div class="text__inner">
-        <?php if (!empty($args['heading'])) { ?>
-            <?= \Reach\Component::get('heading', $args['heading']); ?>
+        <?php if (!empty($args['header'])) { ?>
+            <h2 class='text__header' <?php if (!empty($args['header_width'])) { echo "style='max-width: " . $args['header_width'] . ";'"; } ?>>
+                <?= $args['header']; ?>
+            </h2>
         <?php } ?>
         <div class="text__columns">
             <?php foreach ($args['columns'] as $column) { ?>
